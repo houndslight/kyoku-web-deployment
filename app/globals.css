@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Japanese minimalist aesthetic - inspired by business cards */
+  --background: oklch(0.96 0.002 106); /* Pearl White #F5F5F5 */
+  --foreground: oklch(0.09 0.005 30); /* Ink Black #0E0E0E */
+  --card: oklch(0.98 0.001 106);
+  --card-foreground: oklch(0.09 0.005 30);
+  --popover: oklch(0.98 0.001 106);
+  --popover-foreground: oklch(0.09 0.005 30);
+
+  /* Primary accent - customizable by user */
+  --primary: oklch(0.72 0.12 230); /* Aqua Mist #91C9FF */
+  --primary-foreground: oklch(0.09 0.005 30);
+
+  /* Optional accent */
+  --sakura: oklch(0.75 0.11 15); /* Sakura Blush #F3A6A0 */
+  --sakura-foreground: oklch(0.09 0.005 30);
+
+  --secondary: oklch(0.94 0.003 106);
+  --secondary-foreground: oklch(0.09 0.005 30);
+  --muted: oklch(0.93 0.003 106);
+  --muted-foreground: oklch(0.45 0.01 30);
+  --accent: oklch(0.92 0.005 106);
+  --accent-foreground: oklch(0.09 0.005 30);
+
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.96 0.002 106);
+
+  --border: oklch(0.13 0.005 30); /* Graphite Grey #1C1C1C */
+  --input: oklch(0.88 0.005 106);
+  --ring: oklch(0.72 0.12 230);
+
+  --radius: 0.375rem; /* Slightly more rounded for modern feel */
+
+  --sidebar: oklch(0.97 0.002 106);
+  --sidebar-foreground: oklch(0.09 0.005 30);
+  --sidebar-primary: oklch(0.72 0.12 230);
+  --sidebar-primary-foreground: oklch(0.09 0.005 30);
+  --sidebar-accent: oklch(0.94 0.005 106);
+  --sidebar-accent-foreground: oklch(0.09 0.005 30);
+  --sidebar-border: oklch(0.9 0.005 106);
+  --sidebar-ring: oklch(0.72 0.12 230);
+}
+
+.dark {
+  --background: oklch(0.09 0.005 30); /* Ink Black #0E0E0E */
+  --foreground: oklch(0.96 0.002 106); /* Pearl White */
+  --card: oklch(0.13 0.005 30); /* Graphite Grey #1C1C1C */
+  --card-foreground: oklch(0.96 0.002 106);
+  --popover: oklch(0.13 0.005 30);
+  --popover-foreground: oklch(0.96 0.002 106);
+
+  --primary: oklch(0.72 0.12 230); /* Aqua Mist */
+  --primary-foreground: oklch(0.09 0.005 30);
+
+  --sakura: oklch(0.75 0.11 15); /* Sakura Blush */
+  --sakura-foreground: oklch(0.09 0.005 30);
+
+  --secondary: oklch(0.16 0.005 30);
+  --secondary-foreground: oklch(0.96 0.002 106);
+  --muted: oklch(0.15 0.005 30);
+  --muted-foreground: oklch(0.55 0.01 30);
+  --accent: oklch(0.18 0.005 30);
+  --accent-foreground: oklch(0.96 0.002 106);
+
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.96 0.002 106);
+
+  --border: oklch(0.2 0.005 30); /* Graphite Grey */
+  --input: oklch(0.2 0.005 30);
+  --ring: oklch(0.72 0.12 230);
+
+  --sidebar: oklch(0.11 0.005 30);
+  --sidebar-foreground: oklch(0.96 0.002 106);
+  --sidebar-primary: oklch(0.72 0.12 230);
+  --sidebar-primary-foreground: oklch(0.09 0.005 30);
+  --sidebar-accent: oklch(0.16 0.005 30);
+  --sidebar-accent-foreground: oklch(0.96 0.002 106);
+  --sidebar-border: oklch(0.2 0.005 30);
+  --sidebar-ring: oklch(0.72 0.12 230);
+}
+
+@theme inline {
+  --font-mincho: "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-sakura: var(--sakura);
+  --color-sakura-foreground: var(--sakura-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile safe area utilities for notches and home indicators */
+@layer utilities {
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-area-inset-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-area-inset-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Touch-friendly tap targets for mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Smooth scrolling for mobile */
+@supports (-webkit-overflow-scrolling: touch) {
+  .overflow-auto,
+  .overflow-y-auto,
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}

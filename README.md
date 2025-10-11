@@ -2,7 +2,8 @@
 
 A minimalist  music player built with Next.js, React, and TypeScript.
 
-![Kyoku Music Player](./screenshots/kyoku-library-desktop.png)
+![Kyoku Music Player]<img width="1280" height="720" alt="kyoku-readmeart" src="https://github.com/user-attachments/assets/383ac69b-35df-4229-b7e7-e38625ff2b15" />
+
 
 ## Features
 
